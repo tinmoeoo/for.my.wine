@@ -13,8 +13,8 @@
         }
         .corner-image {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             border-radius: 0px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -30,7 +30,7 @@
         }
         h1 {
             color: red;
-            font-size: 2em; /* Reduced font size */
+            font-size: 1.8em; /* Reduced font size */
             animation: heartbeat 1.5s infinite;
         }
         .image-container {
@@ -38,7 +38,7 @@
             display: inline-block;
         }
         .image-container img {
-            width: 200px; /* Reduced GIF size */
+            width: 150px; /* Reduced GIF size */
             height: auto;
             border-radius: 15px;
             margin: 20px;
@@ -46,11 +46,11 @@
             animation: float 3s infinite ease-in-out;
         }
         .buttons button {
-            font-size: 18px; /* Reduced button font size */
+            font-size: 16px; /* Reduced button font size */
             padding: 8px 16px;
             margin: 10px;
             border: none;
-            border-radius: 0px;
+            border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
         }
@@ -60,13 +60,14 @@
         .absolutely:hover { background-color: #e6b800; transform: scale(1.1); }
         .hidden {
             display: none;
-            font-size: 1.5em;
+            font-size: 1.3em;
             color: red;
             margin-top: 20px;
+            text-align: center;
             animation: fadeIn 1.5s ease-in-out;
         }
         .small-gif {
-            width: 100px !important; /* Smaller size after click */
+            width: 80px !important; /* Smaller size after click */
         }
         @keyframes floatText {
             0% { transform: translateY(0px); }
@@ -85,7 +86,7 @@
         <div class="image-container">
             <img id="main-gif" src="https://tenor.com/view/please-gif-6115078344733356394.gif" alt="Cute GIF">
         </div>
-        <h1 style="font-family: 'Dancing Script', cursive; font-size: 2em; color: #ff3366; animation: floatText 3s infinite ease-in-out;">My Dearest Wainn, Will You Make My Heart The Happiest By Being My Valentine? 💖</h1>
+        <h1 style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #ff3366; animation: floatText 3s infinite ease-in-out;">My Dearest Wainn, Will You Be My Valentine? 💖</h1>
         <div class="buttons">
             <button class="yes" onclick="showLove('yes')">Yes</button>
             <button class="absolutely" onclick="showLove('absolutely')">Absolutely Yes!</button>
@@ -96,9 +97,9 @@
     <script>
         function showLove(choice) {
             let message = choice === 'absolutely' 
-                ? "Congratulations! 🎉 Now you've become the most handsome guy's Valentine! ❤️"
-                : "Yay! ❤️ You are my everything, my love! 😘";
-            document.getElementById('love-message').innerText = message;
+                ? "<p style='font-size: 1.5em; color: #cc0000;'>Congratulations! 🎉 Now you've become the most handsome guy's Valentine! ❤️</p>"
+                : "<p style='font-size: 1.5em; color: #cc0000;'>Yay! ❤️ You are my everything, my love! 😘</p>";
+            document.getElementById('love-message').innerHTML = message;
             document.getElementById('love-message').style.display = 'block';
             
             if (choice === 'absolutely') {
@@ -106,7 +107,7 @@
                 gif.src = 'https://tenor.com/view/peach-goma-peach-heart-gif-4275715884831483873.gif';
                 gif.alt = 'Peach Goma Heart GIF';
                 gif.classList.add('small-gif');
-                gif.style.marginTop = '20px';
+                gif.style.marginTop = '10px';
                 document.getElementById('love-message').appendChild(gif);
                 
                 // Reduce size of main gif
