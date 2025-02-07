@@ -38,7 +38,7 @@
             display: inline-block;
         }
         .image-container img {
-            width: 150px; /* Reduced GIF size */
+            width: 200px; /* Reduced GIF size */
             height: auto;
             border-radius: 15px;
             margin: 20px;
@@ -60,10 +60,13 @@
         .absolutely:hover { background-color: #e6b800; transform: scale(1.1); }
         .hidden {
             display: none;
-            font-size: 1em;
+            font-size: 1.5em;
             color: red;
             margin-top: 20px;
             animation: fadeIn 1.5s ease-in-out;
+        }
+        .small-gif {
+            width: 100px !important; /* Smaller size after click */
         }
         @keyframes floatText {
             0% { transform: translateY(0px); }
@@ -80,7 +83,7 @@
     
     <div class="container">
         <div class="image-container">
-            <img src="https://tenor.com/view/please-gif-6115078344733356394.gif" alt="Cute GIF">
+            <img id="main-gif" src="https://tenor.com/view/please-gif-6115078344733356394.gif" alt="Cute GIF">
         </div>
         <h1 style="font-family: 'Dancing Script', cursive; font-size: 2em; color: #ff3366; animation: floatText 3s infinite ease-in-out;">My Dearest Wainn, Will You Make My Heart The Happiest By Being My Valentine? 💖</h1>
         <div class="buttons">
@@ -102,11 +105,14 @@
                 let gif = document.createElement('img');
                 gif.src = 'https://tenor.com/view/peach-goma-peach-heart-gif-4275715884831483873.gif';
                 gif.alt = 'Peach Goma Heart GIF';
-                gif.style.marginTop = '10px';
+                gif.classList.add('small-gif');
+                gif.style.marginTop = '20px';
                 document.getElementById('love-message').appendChild(gif);
+                
+                // Reduce size of main gif
+                document.getElementById('main-gif').classList.add('small-gif');
             }
         }
     </script>
 </body>
 </html>
-
